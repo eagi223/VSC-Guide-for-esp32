@@ -43,34 +43,28 @@ You need the following:<br/>
 ## Setup toolchain
 
 Next you need tools for compilation and linking your projects
-Go to below link and follow instructions
-https://docs.espressif.com/projects/esp-idf/en/feature-cmake/get-started/index.html#setup-toolchain
+Go to below link and follow the gettings started instructions for Mac.
+https://docs.espressif.com/projects/esp-idf/en/latest/get-started/index.html
 
-You need to download all-in-one esp-idf tools installer
-<a href="https://dl.espressif.com/dl/esp-idf-tools-setup-1.1.exe">https://dl.espressif.com/dl/esp-idf-tools-setup-1.1.exe</a>
-and get the latest ESP-IDF framework
-
-<a href="https://docs.espressif.com/projects/esp-idf/en/feature-cmake/get-started/index.html#get-started-get-esp-idf">How to get ESP-IDF</a>
 
 ## Setup and verify environment variables
 
-Make sure all path and idf variables are present and pointing to right locations. 
-IDF_PATH is cruicial. 
-You can use run-command way to set them up with `setx IDF_PATH "...your path to esp-idf folder"`
+To setup the necessary environment variables for use within VS Code perform the following steps:
+    * launch VS Code
+    * click View on the top menu bar
+    * click Command Palette
+    * in the Command Palette bar, type "settings"
+    * a dropdown menu should appear with one of the options being "Preferences: Open Settings"
+    * in the Search Settings bar, type "terminal env"
+    * scroll to Terminal > Integrated > Env: Osx and click Edit in settings.json
+    * copy the following in between the brackets beside terminal.integrated.env.osx :
+            "PATH":"$PATH:$HOME/esp/xtensa-esp32-elf/bin",
+            "IDF_PATH":"$HOME/esp/esp-idf"
+            using the correct path where you installed the ESP-IDF and xtensa directories
+    * CTRL + s to save and then close the file
 
-Example setup:
-<br/>
 
-<img src="vsc-guide-2.bmp" >
-<img src="vsc-guide-3.bmp" >
-
-**Note:**
-If you want to quickly install whole environment with esp-idf framework - I created a batch file that will pull esp-idf from github repository, download it to user profile location (C:\Users\NAME\ESP32) and set the IDF_PATH automatically.<br/>
-IMPORTANT: Please run this file as administrator!!<br/>
-<a href="Resources/esp32setenv.bat">esp32setenv.bat</a>
-
-**Make sure you install Git for Windows**<br/>
-<a href="https://git-scm.com/downloads">Git Client download page</a>
+{IMAGES TO COME}
 
 ## Create project
 
